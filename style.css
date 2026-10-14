@@ -1,0 +1,184 @@
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  src: url(fonts/archivo-latin-wdth-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  src: url(fonts/archivo-latin-ext-wdth-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(fonts/jetbrains-mono-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+20AC,U+2122,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(fonts/jetbrains-mono-latin-ext-400-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* The app's own colours (lib/core/theme/app_colors.dart). */
+:root {
+  --ink: #0D1318;
+  --surface: #151D23;
+  --line: #26323B;
+  --line-strong: #384650;
+  --text: #E9EFF3;
+  --dim: #A9B6C0;
+  --faint: #8795A0;
+  --teal: #55CDD3;
+  --on-teal: #00363B;
+  --green: #63C795;
+  --measure: 38rem;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font: 400 1.0625rem/1.6 'Archivo', system-ui, sans-serif;
+  font-stretch: 100%;
+}
+a { color: var(--teal); text-underline-offset: 0.18em; }
+a:focus-visible, .button:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 6px; }
+img { max-width: 100%; height: auto; display: block; }
+
+.wrap { max-width: 70rem; margin: 0 auto; padding: 0 1.25rem; }
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
+  font-stretch: 125%;
+  letter-spacing: 0.04em;
+}
+.brand img { width: 2rem; height: 2rem; border-radius: 0.5rem; }
+.lang { color: var(--dim); }
+
+/* The motto is the page's one loud thing: the same family, pulled narrow
+   for the fight, stretched wide for the design that replaces it. */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.5rem;
+  padding: 2.5rem 0 4rem;
+}
+.motto { margin: 0 0 1.5rem; line-height: 0.98; font-weight: 800; }
+.motto span { display: block; }
+.motto .fight {
+  font-stretch: 62%;
+  font-weight: 500;
+  color: var(--dim);
+  font-size: clamp(2.2rem, 7vw, 4.4rem);
+}
+.motto .design {
+  font-stretch: 125%;
+  font-size: clamp(2.3rem, 7.4vw, 4.9rem);
+  letter-spacing: -0.01em;
+}
+.lead { max-width: var(--measure); color: var(--text); font-size: 1.1875rem; margin: 0 0 2rem; }
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; align-items: center; }
+.button {
+  display: inline-block;
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
+  background: var(--teal);
+  color: var(--on-teal);
+  font-weight: 700;
+  text-decoration: none;
+}
+.button[aria-disabled="true"] {
+  background: transparent;
+  color: var(--dim);
+  border: 1px solid var(--line-strong);
+}
+.req { color: var(--faint); font-size: 0.9375rem; margin: 1rem 0 0; }
+
+.phone {
+  justify-self: center;
+  width: min(17rem, 72vw);
+  padding: 0.5rem;
+  border-radius: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.phone img { border-radius: 1.6rem; }
+
+section { padding: 3.5rem 0; border-top: 1px solid var(--line); }
+h2 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.6rem, 3.6vw, 2.25rem);
+  line-height: 1.15;
+  font-weight: 700;
+  font-stretch: 112%;
+}
+h3 { margin: 0 0 0.4rem; font-size: 1.1875rem; font-weight: 700; font-stretch: 106%; }
+p { margin: 0 0 1rem; }
+.dim { color: var(--dim); }
+
+.features { display: grid; gap: 2.5rem; grid-template-columns: minmax(0, 1fr); }
+.feature .phone { justify-self: start; width: min(15rem, 70vw); margin-bottom: 1.25rem; }
+.feature p { color: var(--dim); max-width: 26rem; }
+.modules { max-width: var(--measure); margin-top: 2.5rem; }
+
+/* The permission ledger: the manifest itself, in plain words. */
+.ledger { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-strong); }
+.ledger li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.35rem 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.ledger code {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.8125rem;
+  color: var(--dim);
+  overflow-wrap: anywhere;
+}
+.ledger .absent code { color: var(--text); text-decoration: line-through; text-decoration-color: var(--teal); text-decoration-thickness: 2px; }
+.ledger .absent span { color: var(--teal); font-weight: 600; }
+.ledger span { color: var(--text); }
+
+.prices { display: grid; gap: 2rem; grid-template-columns: minmax(0, 1fr); }
+.price { padding-left: 1.25rem; border-left: 3px solid var(--line-strong); }
+.price.pro { border-left-color: var(--teal); }
+.price p { color: var(--dim); max-width: 30rem; }
+
+footer { padding: 2.5rem 0 3rem; border-top: 1px solid var(--line); color: var(--faint); font-size: 0.9375rem; }
+footer p { max-width: var(--measure); }
+.foot-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-bottom: 1rem; }
+
+@media (min-width: 52rem) {
+  .hero { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); align-items: center; padding: 3.5rem 0 5rem; }
+  .features { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ledger li { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: baseline; }
+  .prices { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
