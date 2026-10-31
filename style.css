@@ -172,6 +172,14 @@ p { margin: 0 0 1rem; }
 .price.pro { border-left-color: var(--teal); }
 .price p { color: var(--dim); max-width: 30rem; }
 
+.guide-head { padding: 2.5rem 0 1rem; }
+.guide-head h1 { margin: 0 0 1rem; font-size: clamp(2rem, 6vw, 3rem); line-height: 1.05; font-weight: 800; }
+.toc { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
+.guide section { padding: 2.5rem 0; }
+.guide .intro { color: var(--dim); max-width: var(--measure); }
+.guide dl { margin: 0; max-width: var(--measure); }
+.guide dt { font-weight: 700; margin-top: 1.25rem; }
+.guide dd { margin: 0.25rem 0 0; color: var(--dim); }
 footer { padding: 2.5rem 0 3rem; border-top: 1px solid var(--line); color: var(--faint); font-size: 0.9375rem; }
 footer p { max-width: var(--measure); }
 .foot-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-bottom: 1rem; }
